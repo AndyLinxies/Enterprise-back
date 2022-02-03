@@ -11,7 +11,10 @@ use Illuminate\Notifications\Notification;
 //Pour les jobs. L'action sera mise dans une Queue. Sera rendra l'experience utilisateur plus fluide sans devoir attendre le chargement. L'action à faire sera enregisté dans la table jobs
 
 
-class NewTacheNotification extends Notification implements shouldQueue //1 rajout de implements shouldQueue
+class NewTacheNotification extends Notification 
+
+//1 rajout de implements shouldQueue *
+//Si event alors implements shouldQueue doit aller dans le listener
 //2 Aller dans .env et mettre QUEUE_CONNECTION=database
 //3 php artisan queue:table . Creation de la migration jobs
 //4 php artisan migrate

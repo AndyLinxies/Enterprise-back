@@ -23,7 +23,7 @@ class TacheSeeder extends Seeder
             ],
             [
                 'tache' =>'Faire la réunion',
-                'done' => 0,
+                'done' => 1,
                 'entreprise_id'=>1,
                 
             ],
@@ -35,7 +35,7 @@ class TacheSeeder extends Seeder
             ],
             [
                 'tache' =>'Appeler les clients',
-                'done' => 0,
+                'done' => 1,
                 'entreprise_id'=>2,
                 
             ],

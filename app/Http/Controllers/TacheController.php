@@ -7,6 +7,7 @@ use App\Models\Tache;
 use App\Models\User;
 use App\Notifications\NewTacheNotification;
 use App\Notifications\RecapSoirNotification;
+use App\Providers\AddTache;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -66,15 +67,17 @@ class TacheController extends Controller
         
         //On envoie la notification au user dont l'entreprise est concerné (voir Model de l'entreprise, belongsTo)
         //Le mail sera envoyé grace au champs email de du User Récupéré
-        //Dans le paramètre de la notification on passe LA nouvelle tache qu'on vient de créer (C'est un object). Il 
-        Notification::send($thisEntUser, new NewTacheNotification($store));
+        //Dans le paramètre de la notification on passe LA nouvelle tache qu'on vient de créer (C'est un object).
         
-        //Test recap soir
+        //Sans l'event
+        // Notification::send($thisEntUser, new NewTacheNotification($store));
+        
+        //Avec l'event
+        //Je passe les deux variables nécessaires a l'event
+        event(new AddTache($store,$thisEntUser));
 
-        // $entreprise=Entreprise::all();
-        // foreach ($entreprise as $ent) {
-        // $user=User::find($ent->user_id);
-        // Notification::send($user, new RecapSoirNotification($ent));
+        
+        
 
         return redirect()->back();
     }

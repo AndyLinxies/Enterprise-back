@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Mail\CreationCompte;
 use App\Models\User;
 use App\Notifications\WelcomeEmailNotification;
+use App\Providers\NewUserEvent;
 use Illuminate\Validation\Rules;
 
 
@@ -65,9 +66,12 @@ class UserController extends Controller
             'token' => $token
         ];
 
+        //Sans events
         //Mail à la création d'un nouveau compte
-        $user->notify(new WelcomeEmailNotification());
+        // $user->notify(new WelcomeEmailNotification());
 
+        //Avec events . Voir EventServiceProvider
+        event(new NewUserEvent($user));
 
         return response($response,201);
     }

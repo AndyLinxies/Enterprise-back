@@ -5,6 +5,7 @@ namespace App\Console\Commands;
 use App\Models\Entreprise;
 use App\Models\User;
 use App\Notifications\RecapSoirNotification;
+use App\Providers\RecapTachesEvent;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Notification;
@@ -42,13 +43,19 @@ class RecapTachesSoir extends Command
      */
     public function handle()
     {
-        // $entreprise=Entreprise::all()->ent;
-        echo 'Voici ma première commande';
-    //     $users=User::all();
-    //     foreach ($users as $user) {
-            
         
-    //     Notification::send(Auth::user(), new RecapSoirNotification($user->email));
-    // }
+        echo 'Voici ma première commande';
+        //Test recap soir
+        //Sans Event
+        // $entreprise=Entreprise::all();
+        // foreach ($entreprise as $ent) {
+        // $user=User::find($ent->user_id);
+        // Notification::send($user, new RecapSoirNotification($ent));
+        // }
+
+        //Avec Event Voir dans Listener
+        event(new RecapTachesEvent());
+
+
     }
 }

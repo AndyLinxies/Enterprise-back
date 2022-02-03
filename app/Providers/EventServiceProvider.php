@@ -18,6 +18,17 @@ class EventServiceProvider extends ServiceProvider
         Registered::class => [
             SendEmailVerificationNotification::class,
         ],
+        AddTache::class => [
+            SendNewTacheNotification::class,
+        ],
+        NewUserEvent::class => [
+            NewUserNotificationListener::class,
+        ],
+        RecapTachesEvent::class => [
+            RecapTachesNotificationListener::class,
+        ],
+
+
     ];
 
     /**

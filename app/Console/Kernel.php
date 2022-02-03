@@ -16,10 +16,10 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule)
     {
         $schedule->command('recap:soir')
-        ->dailyAt('23:02')
+        ->dailyAt('21:00')
         ->appendOutputTo('scheduler.log')
         ;
-        
+
     }
 
     /**
