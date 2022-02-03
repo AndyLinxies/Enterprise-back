@@ -15,6 +15,8 @@ L'entreprise peut :
 - accéder au dashboard
 - voir et update son profil (mais pas la TVA et info récupérer)
 - discuter avec un admin (pas de temps réel, une mise à jour manuelle quand le user recharge la page)
+
+CORRIGER
 - voir la liste de tâches (Todo) et changer le status “open” + “done”
 
 
@@ -59,6 +61,8 @@ Après avoir fini cette partie, il faudra rajouter les fonctionnalités suivante
 - ajouter des notifications quand on reçoit un message et une tache
 - toutes les actions comme les notifications, e-mails, messages doivent être des EVENTS
 - utiliser le système de Jobs pour lancer les EVENTS
+
+Notification->Jobs->Event
 ---------------------------‐--------------------------------------------------
 Deadline : 4 Fevrier
 (si la moitié n'a pas fini, on ajoutera une semaine)

@@ -26,6 +26,11 @@ class UserSeeder extends Seeder
                 "email"=> "entreprise1@entreprise1.be",
                 "password"=>Hash::make('entreprise1@entreprise1.be')
             ],
+            [
+                "name" => "entreprise2",
+                "email"=> "entreprise2@entreprise2.be",
+                "password"=>Hash::make('entreprise2@entreprise2.be')
+            ],
         ]);
     }
 }

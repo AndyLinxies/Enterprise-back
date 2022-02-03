@@ -1,0 +1,46 @@
+Voici ma première commandeVoici ma première commande
+   Error 
+
+  Call to a member function routeNotificationFor() on null
+
+  at vendor/laravel/framework/src/Illuminate/Notifications/Channels/MailChannel.php:53
+     49▕     public function send($notifiable, Notification $notification)
+     50▕     {
+     51▕         $message = $notification->toMail($notifiable);
+     52▕ 
+  ➜  53▕         if (! $notifiable->routeNotificationFor('mail', $notification) &&
+     54▕             ! $message instanceof Mailable) {
+     55▕             return;
+     56▕         }
+     57▕
+
+      [2m+7 vendor frames [22m
+  8   app/Console/Commands/RecapTachesSoir.php:51
+      Illuminate\Support\Facades\Facade::__callStatic("send")
+
+      [2m+13 vendor frames [22m
+  22  artisan:37
+      Illuminate\Foundation\Console\Kernel::handle(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+Voici ma première commande
+   Error 
+
+  Call to a member function routeNotificationFor() on null
+
+  at vendor/laravel/framework/src/Illuminate/Notifications/Channels/MailChannel.php:53
+     49▕     public function send($notifiable, Notification $notification)
+     50▕     {
+     51▕         $message = $notification->toMail($notifiable);
+     52▕ 
+  ➜  53▕         if (! $notifiable->routeNotificationFor('mail', $notification) &&
+     54▕             ! $message instanceof Mailable) {
+     55▕             return;
+     56▕         }
+     57▕
+
+      [2m+7 vendor frames [22m
+  8   app/Console/Commands/RecapTachesSoir.php:51
+      Illuminate\Support\Facades\Facade::__callStatic("send")
+
+      [2m+13 vendor frames [22m
+  22  artisan:37
+      Illuminate\Foundation\Console\Kernel::handle(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))

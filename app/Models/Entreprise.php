@@ -17,5 +17,9 @@ class Entreprise extends Model
     {
         return $this->hasMany(Tache::class,'entreprise_id');
     }
+    public function utilisateur()
+    {
+        return $this->belongsTo(User::class,'user_id');
+    }
     
 }

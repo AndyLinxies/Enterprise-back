@@ -2,12 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\CreationCompte;
 use App\Models\User;
+use App\Notifications\WelcomeEmailNotification;
 use Illuminate\Validation\Rules;
 
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
 
 class UserController extends Controller
 {
@@ -61,6 +64,10 @@ class UserController extends Controller
             'user' => $user,
             'token' => $token
         ];
+
+        //Mail à la création d'un nouveau compte
+        $user->notify(new WelcomeEmailNotification());
+
 
         return response($response,201);
     }

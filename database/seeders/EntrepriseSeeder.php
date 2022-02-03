@@ -28,7 +28,21 @@ class EntrepriseSeeder extends Seeder
                 'persContactEmail' => 'persContEx@exemple.be',
                 'persContactNom' => 'persContNom',
                 'persContactphone' => '0481234567'
-            ]
+            ],
+            [
+                'nrTVA' => '987654321',
+                'nomEntreprise' =>'Exemple entreprise 2',
+                'activiteEntreprise' => 'IT2',
+                'adresseEntreprise' => "Rue de l'exemple 12",
+                'villeEntreprise' => 'Bruxelles',
+                'paysEntreprise' => 'Belgique',
+                'phoneEntreprise' => 'O485396686',
+                'codePostalEntreprise' => 10002,
+                'user_id' => 3,
+                'persContactEmail' => 'persContEx@exemple2.be2',
+                'persContactNom' => 'persContNom2',
+                'persContactphone' => '04812345672'
+            ],
             ]);
     }
 }
