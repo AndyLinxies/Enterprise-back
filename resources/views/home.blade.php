@@ -9,6 +9,7 @@
 @section('content')
     {{-- <h3 class="text-center">Welcome {{ Auth::user()->name }}</h3> --}}
     @yield('content_bo')
+    
 @stop
 
 @section('css')
@@ -16,8 +17,8 @@
 @stop
 
 @section('js')
-    <script>
+<script src="{{ asset('js/app.js') }}"></script>
 
-    </script>
+    
 @stop
 

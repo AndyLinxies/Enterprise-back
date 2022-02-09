@@ -7,6 +7,7 @@ use App\Models\Entreprise;
 use App\Models\message;
 use App\Models\Tache;
 use App\Models\User;
+use App\Events\WebsocketMessagesEvent;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
@@ -22,6 +23,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -33,8 +36,6 @@ Route::get('/admin/messageList/{id}', function ($id) {
     // dd(Entreprise::);
     $messageEnt=Entreprise::find($id);
     $thisEntMessages=$messageEnt->message;
-
-    // dd($thisEntMessages);
         return view('partials.messageList',compact('thisEntMessages','messageEnt'));
 });
 Route::get('/admin/entreprises', function () {

@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Providers;
+namespace App\Listeners;
 
 use App\Notifications\NewTacheNotification;
-use App\Providers\AddTache;
+use App\Events\AddTache;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Support\Facades\Notification;

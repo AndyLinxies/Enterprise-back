@@ -27,6 +27,9 @@ class EventServiceProvider extends ServiceProvider
         RecapTachesEvent::class => [
             RecapTachesNotificationListener::class,
         ],
+        WebsocketMessagesEvent::class => [
+            WebsocketMessagesListener::class,
+        ],
 
 
     ];

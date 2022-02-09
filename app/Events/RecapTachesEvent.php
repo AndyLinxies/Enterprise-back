@@ -1,8 +1,7 @@
 <?php
 
-namespace App\Providers;
+namespace App\Events;
 
-use App\Models\Tache;
 use Illuminate\Broadcasting\Channel;
 use Illuminate\Broadcasting\InteractsWithSockets;
 use Illuminate\Broadcasting\PresenceChannel;
@@ -11,23 +10,18 @@ use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Queue\SerializesModels;
 
-class AddTache
+class RecapTachesEvent
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
-
-    public $store;
-    public $thisEntUser;
 
     /**
      * Create a new event instance.
      *
      * @return void
      */
-    public function __construct($store,$thisEntUser)
+    public function __construct()
     {
-        $this->store=$store;
-        $this->thisEntUser=$thisEntUser;
-
+        //
     }
 
     /**

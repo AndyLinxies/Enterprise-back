@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Providers;
+namespace App\Listeners;
 
 use App\Models\Entreprise;
 use App\Models\User;
 use App\Notifications\RecapSoirNotification;
-use App\Providers\RecapTachesEvent;
+use App\Events\RecapTachesEvent;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Support\Facades\Notification;

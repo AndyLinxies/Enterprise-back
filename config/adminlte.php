@@ -261,7 +261,7 @@ return [
         ],
         [
             'text' => 'Messages',
-            'url'  => 'admin/messageList/',
+            'url'  => 'admin/messageList/1',
             'icon' => 'fas fa-mail-bulk',
         ],
         // [

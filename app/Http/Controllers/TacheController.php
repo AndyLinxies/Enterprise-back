@@ -7,7 +7,7 @@ use App\Models\Tache;
 use App\Models\User;
 use App\Notifications\NewTacheNotification;
 use App\Notifications\RecapSoirNotification;
-use App\Providers\AddTache;
+use App\Events\AddTache;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;

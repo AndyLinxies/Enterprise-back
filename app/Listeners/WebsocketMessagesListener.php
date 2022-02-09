@@ -1,13 +1,12 @@
 <?php
 
-namespace App\Providers;
+namespace App\Listeners;
 
-use App\Notifications\WelcomeEmailNotification;
-use App\Providers\NewUserEvent;
+use App\Events\WebsocketMessagesEvent;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\InteractsWithQueue;
 
-class NewUserNotificationListener
+class WebsocketMessagesListener
 {
     /**
      * Create the event listener.
@@ -22,11 +21,11 @@ class NewUserNotificationListener
     /**
      * Handle the event.
      *
-     * @param  \App\Providers\NewUserEvent  $event
+     * @param  \App\Providers\WebsocketMessagesEvent  $event
      * @return void
      */
-    public function handle(NewUserEvent $event)
+    public function handle(WebsocketMessagesEvent $event)
     {
-        $event->user->notify(new WelcomeEmailNotification());
+        //
     }
 }

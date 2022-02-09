@@ -69,3 +69,11 @@ Deadline : 4 Fevrier
 Vous pouvez utiliser tout ce que vous trouvez sur le net pour réaliser l'exercice.
 Ceux qui auront fini en premier doivent le dire à Nathan pour qu'il m'organise une présentation avec vous.
 Cette exercice me permettra de voir si vous savez faire correctement des recherches et trouver des solutions par vous même. Bonne chance
+
+
+
+//php artisan serve
+//npm run watch
+//php artisan queue:work
+//php artisan websocket:serve
+//php artisan schedule:work Pour lancher le check de la commande

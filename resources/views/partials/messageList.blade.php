@@ -2,7 +2,7 @@
 
 @section('content_bo')
 
-    <div class="container">
+    {{-- <div class="container">
         <h3 class=" text-center">Messaging</h3>
         <div class="messaging">
             <div class="mesgs">
@@ -43,8 +43,16 @@
             </div>
         </div>
     </div>
+    </div> --}}
+    
+    <div id="app">
+        <message-component :messagelist="{{$thisEntMessages}}" :messageent="{{$messageEnt}}"></message-component>
+
     </div>
-    <style>
+
+
+
+    {{-- <style>
         .container {
             max-width: 1170px;
             margin: auto;
@@ -260,5 +268,5 @@
             overflow-y: auto;
         }
 
-    </style>
+    </style> --}}
 @endsection
