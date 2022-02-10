@@ -2,6 +2,14 @@
 
 namespace App\Providers;
 
+use App\Events\AddTache;
+use App\Events\NewUserEvent;
+use App\Events\RecapTachesEvent;
+use App\Events\WebsocketMessagesEvent;
+use App\Listeners\NewUserNotificationListener;
+use App\Listeners\RecapTachesNotificationListener;
+use App\Listeners\SendNewTacheNotification;
+use App\Listeners\WebsocketMessagesListener;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;

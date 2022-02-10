@@ -88,4 +88,17 @@ Route::get('/dashboard/messageList/', function () {
 //Envoi de message
 Route::post('/dashboard/addMessage',[MessageController::class,'storeEnt']);
 
+//Notifications pour le l'entreprise
+Route::get('/dashboard/notifications', function () {
+    
+    $notifications= Auth::user()->unreadNotifications;
+
+    return response()->json([
+        'message' =>"Notifications",
+        'data' => $notifications
+    ],
+201);
+});
+
+
 });

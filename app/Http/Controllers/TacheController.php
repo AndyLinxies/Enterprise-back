@@ -75,10 +75,10 @@ class TacheController extends Controller
         //Avec l'event
         //Je passe les deux variables nécessaires a l'event
         event(new AddTache($store,$thisEntUser));
+        // Notification::send($thisEntUser, new NewTacheNotification($store));
+
 
         
-        
-
         return redirect()->back();
     }
 

@@ -5335,6 +5335,20 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "message-component",
@@ -5358,11 +5372,10 @@ __webpack_require__.r(__webpack_exports__);
         console.log(response.data); //   this.$toast.success(response.data.message);
 
         _this.getMessages();
-
-        _this.messageToAdmin.message = "";
       })["catch"](function (error) {
         console.log(error.response); //   this.$toast.error("Message non envoyé");
       });
+      this.messageToAdmin.message = " ";
     } //Les messages que l'entreprise a envoyé à l'admin
     // getMessages() {
     //   axios
@@ -5377,7 +5390,7 @@ __webpack_require__.r(__webpack_exports__);
   mounted: function mounted() {
     var _this2 = this;
 
-    window.Echo.channel('MessageChannel').listen('WebsocketMessagesEvent', function (e) {
+    window.Echo.channel("MessageChannel").listen("WebsocketMessagesEvent", function (e) {
       if (e.message.entreprise_id == _this2.messageent.id) {
         console.log(e);
 
@@ -10512,7 +10525,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.container[data-v-299e239e] {\n  max-width: 1170px;\n  margin: auto;\n}\nimg[data-v-299e239e] {\n  max-width: 100%;\n}\n.inbox_people[data-v-299e239e] {\n  background: #f8f8f8 none repeat scroll 0 0;\n  float: left;\n  overflow: hidden;\n  width: 40%;\n  border-right: 1px solid #c4c4c4;\n}\n.inbox_msg[data-v-299e239e] {\n  border: 1px solid #c4c4c4;\n  clear: both;\n  overflow: hidden;\n}\n.top_spac[data-v-299e239e] {\n  margin: 20px 0 0;\n}\n.recent_heading[data-v-299e239e] {\n  float: left;\n  width: 40%;\n}\n.srch_bar[data-v-299e239e] {\n  display: inline-block;\n  text-align: right;\n  width: 60%;\n}\n.headind_srch[data-v-299e239e] {\n  padding: 10px 29px 10px 20px;\n  overflow: hidden;\n  border-bottom: 1px solid #c4c4c4;\n}\n.recent_heading h4[data-v-299e239e] {\n  color: #05728f;\n  font-size: 21px;\n  margin: auto;\n}\n.srch_bar input[data-v-299e239e] {\n  border: 1px solid #cdcdcd;\n  border-width: 0 0 1px 0;\n  width: 80%;\n  padding: 2px 0 4px 6px;\n  background: none;\n}\n.srch_bar .input-group-addon button[data-v-299e239e] {\n  background: rgba(0, 0, 0, 0) none repeat scroll 0 0;\n  border: medium none;\n  padding: 0;\n  color: #707070;\n  font-size: 18px;\n}\n.srch_bar .input-group-addon[data-v-299e239e] {\n  margin: 0 0 0 -27px;\n}\n.chat_ib h5[data-v-299e239e] {\n  font-size: 15px;\n  color: #464646;\n  margin: 0 0 8px 0;\n}\n.chat_ib h5 span[data-v-299e239e] {\n  font-size: 13px;\n  float: right;\n}\n.chat_ib p[data-v-299e239e] {\n  font-size: 14px;\n  color: #989898;\n  margin: auto;\n}\n.chat_img[data-v-299e239e] {\n  float: left;\n  width: 11%;\n}\n.chat_ib[data-v-299e239e] {\n  float: left;\n  padding: 0 0 0 15px;\n  width: 88%;\n}\n.chat_people[data-v-299e239e] {\n  overflow: hidden;\n  clear: both;\n}\n.chat_list[data-v-299e239e] {\n  border-bottom: 1px solid #c4c4c4;\n  margin: 0;\n  padding: 18px 16px 10px;\n}\n.inbox_chat[data-v-299e239e] {\n  height: 550px;\n  overflow-y: scroll;\n}\n.active_chat[data-v-299e239e] {\n  background: #ebebeb;\n}\n.incoming_msg_img[data-v-299e239e] {\n  display: inline-block;\n  width: 6%;\n}\n.received_msg[data-v-299e239e] {\n  display: inline-block;\n  padding: 0 0 0 10px;\n  vertical-align: top;\n  width: 92%;\n}\n.received_withd_msg p[data-v-299e239e] {\n  background: #ebebeb none repeat scroll 0 0;\n  border-radius: 3px;\n  color: #646464;\n  font-size: 14px;\n  margin: 0;\n  padding: 5px 10px 5px 12px;\n  width: 100%;\n}\n.time_date[data-v-299e239e] {\n  color: #747474;\n  display: block;\n  font-size: 12px;\n  margin: 8px 0 0;\n}\n.received_withd_msg[data-v-299e239e] {\n  width: 57%;\n}\n.mesgs[data-v-299e239e] {\n  float: left;\n  padding: 30px 15px 0 25px;\n  width: 60%;\n}\n.sent_msg p[data-v-299e239e] {\n  background: #05728f none repeat scroll 0 0;\n  border-radius: 3px;\n  font-size: 14px;\n  margin: 0;\n  color: #fff;\n  padding: 5px 10px 5px 12px;\n  width: 100%;\n}\n.outgoing_msg[data-v-299e239e] {\n  overflow: hidden;\n  margin: 26px 0 26px;\n}\n.sent_msg[data-v-299e239e] {\n  float: right;\n  width: 46%;\n}\n.input_msg_write input[data-v-299e239e] {\n  background: rgba(0, 0, 0, 0) none repeat scroll 0 0;\n  border: medium none;\n  color: #4c4c4c;\n  font-size: 15px;\n  min-height: 48px;\n  width: 100%;\n}\n.type_msg[data-v-299e239e] {\n  border-top: 1px solid #c4c4c4;\n  position: relative;\n}\n.msg_send_btn[data-v-299e239e] {\n  border: medium none;\n  border-radius: 50%;\n  color: #fff;\n  cursor: pointer;\n  font-size: 17px;\n  height: 33px;\n  position: absolute;\n  right: 0;\n  top: 11px;\n  width: 33px;\n}\n.messaging[data-v-299e239e] {\n  padding: 0 0 50px 0;\n}\n.msg_history[data-v-299e239e] {\n  height: 516px;\n  overflow-y: auto;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.container[data-v-299e239e] {\n    max-width: 1170px;\n    margin: auto;\n}\nimg[data-v-299e239e] {\n    max-width: 100%;\n}\n.inbox_people[data-v-299e239e] {\n    background: #f8f8f8 none repeat scroll 0 0;\n    float: left;\n    overflow: hidden;\n    width: 40%;\n    border-right: 1px solid #c4c4c4;\n}\n.inbox_msg[data-v-299e239e] {\n    border: 1px solid #c4c4c4;\n    clear: both;\n    overflow: hidden;\n}\n.top_spac[data-v-299e239e] {\n    margin: 20px 0 0;\n}\n.recent_heading[data-v-299e239e] {\n    float: left;\n    width: 40%;\n}\n.srch_bar[data-v-299e239e] {\n    display: inline-block;\n    text-align: right;\n    width: 60%;\n}\n.headind_srch[data-v-299e239e] {\n    padding: 10px 29px 10px 20px;\n    overflow: hidden;\n    border-bottom: 1px solid #c4c4c4;\n}\n.recent_heading h4[data-v-299e239e] {\n    color: #05728f;\n    font-size: 21px;\n    margin: auto;\n}\n.srch_bar input[data-v-299e239e] {\n    border: 1px solid #cdcdcd;\n    border-width: 0 0 1px 0;\n    width: 80%;\n    padding: 2px 0 4px 6px;\n    background: none;\n}\n.srch_bar .input-group-addon button[data-v-299e239e] {\n    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;\n    border: medium none;\n    padding: 0;\n    color: #707070;\n    font-size: 18px;\n}\n.srch_bar .input-group-addon[data-v-299e239e] {\n    margin: 0 0 0 -27px;\n}\n.chat_ib h5[data-v-299e239e] {\n    font-size: 15px;\n    color: #464646;\n    margin: 0 0 8px 0;\n}\n.chat_ib h5 span[data-v-299e239e] {\n    font-size: 13px;\n    float: right;\n}\n.chat_ib p[data-v-299e239e] {\n    font-size: 14px;\n    color: #989898;\n    margin: auto;\n}\n.chat_img[data-v-299e239e] {\n    float: left;\n    width: 11%;\n}\n.chat_ib[data-v-299e239e] {\n    float: left;\n    padding: 0 0 0 15px;\n    width: 88%;\n}\n.chat_people[data-v-299e239e] {\n    overflow: hidden;\n    clear: both;\n}\n.chat_list[data-v-299e239e] {\n    border-bottom: 1px solid #c4c4c4;\n    margin: 0;\n    padding: 18px 16px 10px;\n}\n.inbox_chat[data-v-299e239e] {\n    height: 550px;\n    overflow-y: scroll;\n}\n.active_chat[data-v-299e239e] {\n    background: #ebebeb;\n}\n.incoming_msg_img[data-v-299e239e] {\n    display: inline-block;\n    width: 6%;\n}\n.received_msg[data-v-299e239e] {\n    display: inline-block;\n    padding: 0 0 0 10px;\n    vertical-align: top;\n    width: 92%;\n}\n.received_withd_msg p[data-v-299e239e] {\n    background: #ebebeb none repeat scroll 0 0;\n    border-radius: 3px;\n    color: #646464;\n    font-size: 14px;\n    margin: 0;\n    padding: 5px 10px 5px 12px;\n    width: 100%;\n}\n.time_date[data-v-299e239e] {\n    color: #747474;\n    display: block;\n    font-size: 12px;\n    margin: 8px 0 0;\n}\n.received_withd_msg[data-v-299e239e] {\n    width: 57%;\n}\n.mesgs[data-v-299e239e] {\n    float: left;\n    padding: 30px 15px 0 25px;\n    width: 60%;\n}\n.sent_msg p[data-v-299e239e] {\n    background: #05728f none repeat scroll 0 0;\n    border-radius: 3px;\n    font-size: 14px;\n    margin: 0;\n    color: #fff;\n    padding: 5px 10px 5px 12px;\n    width: 100%;\n}\n.outgoing_msg[data-v-299e239e] {\n    overflow: hidden;\n    margin: 26px 0 26px;\n}\n.sent_msg[data-v-299e239e] {\n    float: right;\n    width: 46%;\n}\n.input_msg_write input[data-v-299e239e] {\n    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;\n    border: medium none;\n    color: #4c4c4c;\n    font-size: 15px;\n    min-height: 48px;\n    width: 100%;\n}\n.type_msg[data-v-299e239e] {\n    border-top: 1px solid #c4c4c4;\n    position: relative;\n}\n.msg_send_btn[data-v-299e239e] {\n    border: medium none;\n    border-radius: 50%;\n    color: #fff;\n    cursor: pointer;\n    font-size: 17px;\n    height: 33px;\n    position: absolute;\n    right: 0;\n    top: 11px;\n    width: 33px;\n}\n.messaging[data-v-299e239e] {\n    padding: 0 0 50px 0;\n}\n.msg_history[data-v-299e239e] {\n    height: 516px;\n    overflow-y: auto;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -34625,56 +34638,80 @@ var render = function () {
               _vm._v(" "),
               _c("div", { staticClass: "type_msg" }, [
                 _c("div", { staticClass: "input_msg_write" }, [
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.messageToAdmin.message,
-                        expression: "messageToAdmin.message",
-                      },
-                    ],
-                    staticClass: "write_msg",
-                    attrs: {
-                      name: "message",
-                      type: "text",
-                      placeholder: "Type a message",
-                    },
-                    domProps: { value: _vm.messageToAdmin.message },
-                    on: {
-                      keyup: function ($event) {
-                        if (
-                          !$event.type.indexOf("key") &&
-                          _vm._k(
-                            $event.keyCode,
-                            "enter",
-                            13,
-                            $event.key,
-                            "Enter"
-                          )
-                        ) {
-                          return null
-                        }
-                        return _vm.sendMessage.apply(null, arguments)
-                      },
-                      input: function ($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.$set(
-                          _vm.messageToAdmin,
-                          "message",
-                          $event.target.value
-                        )
+                  _c(
+                    "form",
+                    {
+                      on: {
+                        submit: function ($event) {
+                          $event.preventDefault()
+                          return _vm.sendMessage.apply(null, arguments)
+                        },
                       },
                     },
-                  }),
-                  _vm._v(" "),
-                  _c("button", {
-                    staticClass: "msg_send_btn",
-                    attrs: { type: "button" },
-                    on: { click: _vm.sendMessage },
-                  }),
+                    [
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.messageToAdmin.message,
+                            expression: "messageToAdmin.message",
+                          },
+                        ],
+                        staticClass: "write_msg",
+                        attrs: {
+                          name: "message",
+                          type: "text",
+                          placeholder: "Type a message",
+                        },
+                        domProps: { value: _vm.messageToAdmin.message },
+                        on: {
+                          input: function ($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.$set(
+                              _vm.messageToAdmin,
+                              "message",
+                              $event.target.value
+                            )
+                          },
+                        },
+                      }),
+                      _vm._v(" "),
+                      _c(
+                        "button",
+                        {
+                          staticClass: "msg_send_btn",
+                          attrs: { type: "submit" },
+                        },
+                        [
+                          _c(
+                            "svg",
+                            {
+                              staticClass: "h-6 w-6",
+                              attrs: {
+                                xmlns: "http://www.w3.org/2000/svg",
+                                fill: "none",
+                                viewBox: "0 0 24 24",
+                                stroke: "currentColor",
+                              },
+                            },
+                            [
+                              _c("path", {
+                                attrs: {
+                                  "stroke-linecap": "round",
+                                  "stroke-linejoin": "round",
+                                  "stroke-width": "2",
+                                  d: "M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z",
+                                },
+                              }),
+                            ]
+                          ),
+                        ]
+                      ),
+                    ]
+                  ),
                 ]),
               ]),
             ]),

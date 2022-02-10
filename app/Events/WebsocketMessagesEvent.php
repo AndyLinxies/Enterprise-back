@@ -3,6 +3,7 @@
 namespace App\Events;
 
 use App\Models\message;
+use App\Models\User;
 use Illuminate\Broadcasting\Channel;
 use Illuminate\Broadcasting\InteractsWithSockets;
 use Illuminate\Broadcasting\PresenceChannel;
@@ -16,16 +17,17 @@ class WebsocketMessagesEvent implements ShouldBroadcast
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
-    public $message;
+    public $message,$user;
 
     /**
      * Create a new event instance.
      *
      * @return void
      */
-    public function __construct(message $message)
+    public function __construct(message $message, User $user)
     {
         $this->message= $message;
+        $this->user= $user;
     }
 
     /**

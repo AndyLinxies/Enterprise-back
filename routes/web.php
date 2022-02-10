@@ -36,7 +36,11 @@ Route::get('/admin/messageList/{id}', function ($id) {
     // dd(Entreprise::);
     $messageEnt=Entreprise::find($id);
     $thisEntMessages=$messageEnt->message;
-        return view('partials.messageList',compact('thisEntMessages','messageEnt'));
+
+    //Notif
+    
+    
+    return view('partials.messageList',compact('thisEntMessages','messageEnt'));
 });
 Route::get('/admin/entreprises', function () {
     $entreprises=Entreprise::all();
@@ -49,7 +53,8 @@ Route::post('/admin/addMessage/{id}',[MessageController::class,'store']);
 //Show de l'entreprise
 Route::get('/admin/entreprise/{id}', function ($id) {
     $show=Entreprise::find($id);
-    
+    // $user = Auth::user();
+
     return view('partials.showEntreprise',compact('show'));
 });
 
@@ -58,6 +63,12 @@ Route::get('/admin/entreprise/{id}', function ($id) {
 
 Route::post('/admin/tache/create/{id}',[TacheController::class,'store']);
 
+//Notifications
+// Route::get('/admin/entreprise/{id}', function ($id) {
+//     $show=Entreprise::find($id);
+    
+//     return view('partials.showEntreprise',compact('show'));
+// });
 
 
 });

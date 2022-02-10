@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\message;
 use App\Events\WebsocketMessagesEvent;
+use App\Models\Entreprise;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -45,7 +47,10 @@ class MessageController extends Controller
         $store->sender=Auth::id();
         $store->save();
 
-        broadcast(new WebsocketMessagesEvent($store));
+        $ent=Entreprise::find($id);
+        $user = User::find($ent->user_id);
+
+        broadcast(new WebsocketMessagesEvent($store,$user));
         return ['status'=> 'success'];
     }
     /**
@@ -62,7 +67,9 @@ class MessageController extends Controller
         $store->entreprise_id=Auth::user()->ent->id;
         $store->sender=Auth::id();
         $store->save();
-        broadcast(new WebsocketMessagesEvent($store));
+
+        $user=User::first();
+        broadcast(new WebsocketMessagesEvent($store,$user));
 
         return response()->json([
             'message' => 'Message envoyé',

@@ -2,37 +2,24 @@
 
 namespace App\Notifications;
 
-use App\Models\Tache;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
 
-//Pour les jobs. L'action sera mise dans une Queue. Sera rendra l'experience utilisateur plus fluide sans devoir attendre le chargement. L'action à faire sera enregisté dans la table jobs
-
-
-class NewTacheNotification extends Notification 
-
-//1 rajout de implements shouldQueue *
-//Si event alors implements shouldQueue doit aller dans le listener
-//2 Aller dans .env et mettre QUEUE_CONNECTION=database
-//3 php artisan queue:table . Creation de la migration jobs
-//4 php artisan migrate
-//5 php artisan queue:work . Lancement des jobs (php artisan tout simple montre la liste des commandes)
-//
+class MessageNotification extends Notification implements ShouldQueue
 {
     use Queueable;
+    protected $message;
 
-    
-    protected $store; //1 Recuperation
     /**
      * Create a new notification instance.
      *
      * @return void
      */
-    public function __construct(object $store) //2 Recuperation
+    public function __construct($message)
     {
-        $this->store=$store;
+        $this->message=$message;
     }
 
     /**
@@ -43,7 +30,7 @@ class NewTacheNotification extends Notification
      */
     public function via($notifiable)
     {
-        return ['mail','database'];
+        return ['database'];
     }
 
     /**
@@ -54,10 +41,8 @@ class NewTacheNotification extends Notification
      */
     public function toMail($notifiable)
     {
-
         return (new MailMessage)
-                    ->line('Nouvelle tache recue:')
-                    ->line($this->store->tache) //3 Utilisation
+                    ->line('The introduction to the notification.')
                     ->action('Notification Action', url('/'))
                     ->line('Thank you for using our application!');
     }
@@ -70,9 +55,19 @@ class NewTacheNotification extends Notification
      */
     public function toArray($notifiable)
     {
+        if ($this->message->sender == 1) {
+            return [
+                "message" =>$this->message->message." from  Admin" 
+            ];
+        } else {
+            // "Entreprise ".$this->message->entreprise_id
+            return [
+                "message" =>$this->message->message." from Entreprise".$this->message->entreprise_id
+            ];
+        }
+        
         return [
-            "name" =>"Nouvelle tache recue",
-            "tache" =>$this->store->tache
+            "message" =>$this->message->message." from ".$this->message->sender == 1 ? "Admin" : "Entreprise ".$this->message->entreprise_id
         ];
     }
 }

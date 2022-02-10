@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\NewUserEvent as EventsNewUserEvent;
 use App\Mail\CreationCompte;
 use App\Models\User;
 use App\Notifications\WelcomeEmailNotification;
@@ -46,7 +47,7 @@ class UserController extends Controller
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', Rules\Password::defaults()],
+            'password' => ['required'],
         ]);
         
         $user = User::create([
@@ -71,7 +72,7 @@ class UserController extends Controller
         // $user->notify(new WelcomeEmailNotification());
 
         //Avec events . Voir EventServiceProvider
-        event(new NewUserEvent($user));
+        event(new EventsNewUserEvent($user));
 
         return response($response,201);
     }
@@ -87,7 +88,7 @@ class UserController extends Controller
 
         $request->validate([
             'email' => ['required', 'string', 'email', 'max:255'],
-            'password' => ['required', Rules\Password::defaults()],
+            'password' => ['required'],
         ]);
         
 

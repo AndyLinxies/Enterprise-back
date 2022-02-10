@@ -17,7 +17,7 @@ class CreateMessagesTable extends Migration
             $table->id();
             $table->longText('message');
             //L'utilisateur qui envoie le message
-            $table->foreignId('entreprise_id')->constrained('entreprises');
+            $table->foreignId('entreprise_id')->nullable()->constrained('entreprises');
             //L'admin
             $table->bigInteger('user_id')->default(1);
             //Celui qui envoit le message
