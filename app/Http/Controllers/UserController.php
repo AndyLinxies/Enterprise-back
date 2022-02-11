@@ -49,7 +49,7 @@ class UserController extends Controller
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required'],
         ]);
-        
+        // dd($request->password);
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
@@ -98,7 +98,7 @@ class UserController extends Controller
     
         //Verification du Password
         
-        if (!$user || Hash::check($request->password, $user->password)) { //Pour le hash check on verifie le input password (1er param) avec le password du user qu'on a dans notre DB (2e param)
+        if (!$user || !Hash::check($request->password, $user->password)) { //Pour le hash check on verifie le input password (1er param) avec le password du user qu'on a dans notre DB (2e param)
             //Si le email ou le password n'est pas bon:
             return response([
                 'message' => "L'email ou le Password n'est pas correct"
